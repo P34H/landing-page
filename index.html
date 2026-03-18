@@ -1,0 +1,918 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>21 Soluções de IA Prontas | Marcos Martins</title>
+  <meta name="description" content="21 sistemas de IA prontos para copiar, colar e aplicar hoje na sua empresa. Sem programar. Por apenas R$97." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800;900&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+
+  <style>
+    /* ─── CSS VARIABLES ─────────────────────────── */
+    :root {
+      --bg:       #0a0a0a;
+      --bg2:      #111111;
+      --bg3:      #181818;
+      --card:     #141414;
+      --card2:    #1c1c1c;
+      --orange:   #FF4500;
+      --orange2:  #e03d00;
+      --text:     #f0f0f0;
+      --muted:    #888;
+      --border:   rgba(255,255,255,0.07);
+      --pad:      8%;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.65;
+      overflow-x: hidden;
+    }
+    h1,h2,h3,h4,h5 { font-family: 'Montserrat', sans-serif; line-height: 1.15; }
+    img { max-width: 100%; display: block; }
+    a { color: inherit; text-decoration: none; }
+
+    /* ─── REUSABLE ───────────────────────────────── */
+    .orange     { color: var(--orange); }
+    .btn-orange {
+      display: inline-block;
+      background: var(--orange);
+      color: #fff;
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 800;
+      font-size: 1rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      padding: 18px 40px;
+      border: none;
+      cursor: pointer;
+      border-radius: 0;
+      transition: background 0.2s, transform 0.15s;
+    }
+    .btn-orange:hover { background: var(--orange2); transform: translateY(-2px); }
+
+    .img-placeholder {
+      background: linear-gradient(135deg, #1a1a1a 0%, #2a2a2a 100%);
+      border: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--muted);
+      font-size: 0.8rem;
+      font-family: 'Montserrat', sans-serif;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 var(--pad);
+    }
+
+    section { padding: 88px var(--pad); }
+
+    /* ─── 1. TOP BAR ─────────────────────────────── */
+    .topbar {
+      background: var(--orange);
+      padding: 10px var(--pad);
+      text-align: center;
+    }
+    .topbar p {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 700;
+      font-size: 0.78rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: #fff;
+    }
+
+    /* ─── 2. HERO ────────────────────────────────── */
+    .hero {
+      padding: 80px var(--pad) 72px;
+      display: grid;
+      grid-template-columns: 1fr 420px;
+      gap: 60px;
+      align-items: center;
+      background: radial-gradient(ellipse 60% 80% at 100% 50%, rgba(255,69,0,0.12) 0%, transparent 70%), var(--bg);
+      animation: heroFadeIn 0.8s ease both;
+    }
+    @keyframes heroFadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    .hero-logo { margin-bottom: 28px; }
+    .hero-logo-name {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 900;
+      font-size: 2.8rem;
+      line-height: 1;
+      color: #fff;
+    }
+    .hero-logo-name span { color: var(--orange); }
+    .hero-logo-tag {
+      font-size: 0.78rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-top: 6px;
+    }
+
+    .hero h1 {
+      font-size: clamp(2rem, 4.5vw, 3rem);
+      font-weight: 900;
+      margin-bottom: 20px;
+    }
+    .hero-sub {
+      font-size: 1.1rem;
+      color: #bbb;
+      max-width: 520px;
+      margin-bottom: 36px;
+      line-height: 1.7;
+    }
+
+    .hero-img-wrap { position: relative; }
+    .hero-photo {
+      width: 100%;
+      height: 540px;
+      object-fit: cover;
+    }
+
+    .hero-badge {
+      position: absolute;
+      background: rgba(20,20,20,0.95);
+      border: 1px solid rgba(255,69,0,0.3);
+      border-left: 3px solid var(--orange);
+      padding: 12px 18px;
+      border-radius: 0;
+    }
+    .hero-badge-top    { top: 24px; right: -20px; }
+    .hero-badge-bottom { bottom: 60px; left: -20px; }
+    .hero-badge-num {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 1.5rem;
+      font-weight: 900;
+      color: var(--orange);
+      line-height: 1;
+    }
+    .hero-badge-label { font-size: 0.75rem; color: var(--muted); margin-top: 2px; }
+
+    /* ─── 3. COMPARISON ──────────────────────────── */
+    .comparison {
+      background: var(--bg2);
+      padding: 80px var(--pad);
+    }
+    .comparison h2 {
+      text-align: center;
+      font-size: clamp(1.6rem, 3vw, 2.2rem);
+      font-weight: 900;
+      margin-bottom: 48px;
+    }
+    .comparison-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+    .comp-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      padding: 36px 32px;
+    }
+    .comp-card.with {
+      border-top: 3px solid var(--orange);
+    }
+    .comp-header {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      margin-bottom: 20px;
+      color: var(--muted);
+    }
+    .comp-card.with .comp-header { color: var(--orange); }
+    .comp-result {
+      font-family: 'Montserrat', sans-serif;
+      font-size: clamp(1.8rem, 4vw, 3.2rem);
+      font-weight: 900;
+      color: #333;
+      line-height: 1;
+      margin-bottom: 12px;
+    }
+    .comp-card.with .comp-result { color: var(--orange); }
+    .comp-desc { font-size: 0.9rem; color: var(--muted); }
+
+    /* ─── 4. PAIN POINTS ─────────────────────────── */
+    .pain {
+      background: var(--bg);
+      padding: 80px var(--pad);
+    }
+    .pain-inner {
+      max-width: 720px;
+      margin: 0 auto;
+      text-align: center;
+    }
+    .pain h2 {
+      font-size: clamp(1.6rem, 3vw, 2.2rem);
+      font-weight: 900;
+      margin-bottom: 40px;
+    }
+    .pain-list { list-style: none; text-align: left; display: flex; flex-direction: column; gap: 16px; }
+    .pain-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 16px;
+      font-size: 1rem;
+      color: #ccc;
+    }
+    .pain-icon {
+      width: 28px; height: 28px;
+      background: var(--orange);
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-weight: 900; font-size: 0.9rem; color: #fff;
+      flex-shrink: 0; margin-top: 2px;
+    }
+
+    /* ─── 5. REFRAME ─────────────────────────────── */
+    .reframe {
+      background: var(--bg2);
+      padding: 80px var(--pad);
+      text-align: center;
+    }
+    .reframe-emoji { font-size: 3.5rem; margin-bottom: 20px; }
+    .reframe h2 {
+      font-size: clamp(1.8rem, 3.5vw, 2.6rem);
+      font-weight: 900;
+      max-width: 700px;
+      margin: 0 auto 20px;
+    }
+    .reframe p {
+      color: #bbb; max-width: 580px; margin: 0 auto; font-size: 1.05rem;
+    }
+
+    /* ─── 6. HOW IT WORKS ────────────────────────── */
+    .how {
+      background: var(--bg);
+      padding: 80px var(--pad);
+      text-align: center;
+    }
+    .how h2 {
+      font-size: clamp(1.6rem, 3vw, 2.2rem);
+      font-weight: 900;
+      margin-bottom: 48px;
+    }
+    .how-row {
+      display: flex;
+      gap: 24px;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-bottom: 24px;
+    }
+    .how-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      width: 220px;
+      text-align: left;
+      position: relative;
+    }
+    .how-img {
+      width: 100%;
+      height: 150px;
+    }
+    .how-badge {
+      position: absolute;
+      top: 12px; left: 12px;
+      width: 34px; height: 34px;
+      background: var(--orange);
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 900; font-size: 0.9rem; color: #fff;
+    }
+    .how-card-body { padding: 16px; }
+    .how-card-body p { font-size: 0.88rem; color: #ccc; line-height: 1.5; }
+    .how > .btn-orange { margin-top: 40px; }
+
+    /* ─── 7. BEFORE/AFTER ────────────────────────── */
+    .beforeafter {
+      background: var(--bg2);
+      padding: 80px var(--pad);
+    }
+    .beforeafter h2 {
+      text-align: center;
+      font-size: clamp(1.6rem, 3vw, 2.2rem);
+      font-weight: 900;
+      margin-bottom: 48px;
+    }
+    .ba-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 32px;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+    .ba-pair { display: flex; flex-direction: column; gap: 12px; }
+    .ba-item { position: relative; }
+    .ba-img {
+      width: 100%; height: 200px;
+    }
+    .ba-label {
+      position: absolute;
+      top: 12px; left: 12px;
+      padding: 4px 12px;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+    .ba-label.antes { background: #333; color: #aaa; }
+    .ba-label.depois { background: var(--orange); color: #fff; }
+    .ba-arrow {
+      text-align: center;
+      font-size: 2rem;
+      color: var(--orange);
+      line-height: 1;
+    }
+
+    /* ─── 8. DIFF BLOCK ──────────────────────────── */
+    .diff {
+      background: var(--bg);
+      padding: 80px var(--pad);
+      display: flex;
+      justify-content: center;
+    }
+    .diff-card {
+      background: var(--card2);
+      border: 1px solid var(--border);
+      border-top: 3px solid var(--orange);
+      padding: 52px 48px;
+      max-width: 700px;
+      width: 100%;
+      text-align: center;
+    }
+    .diff-tag {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.72rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--orange);
+      margin-bottom: 16px;
+    }
+    .diff-card h2 {
+      font-size: clamp(1.6rem, 3vw, 2.2rem);
+      font-weight: 900;
+      margin-bottom: 20px;
+    }
+    .diff-card p { color: #bbb; font-size: 0.98rem; line-height: 1.7; }
+
+    /* ─── 9. BONUS ────────────────────────────────── */
+    .bonus {
+      background: var(--bg2);
+      padding: 80px var(--pad);
+      text-align: center;
+    }
+    .bonus h2 {
+      font-size: clamp(1.6rem, 3vw, 2.2rem);
+      font-weight: 900;
+      margin-bottom: 48px;
+    }
+    .bonus-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      margin-bottom: 48px;
+    }
+    .bonus-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-top: 2px solid var(--orange);
+      text-align: left;
+    }
+    .bonus-img { width: 100%; height: 160px; }
+    .bonus-body { padding: 24px; }
+    .bonus-body h4 {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 1rem;
+      font-weight: 800;
+      margin-bottom: 10px;
+    }
+    .bonus-body p { font-size: 0.88rem; color: var(--muted); line-height: 1.6; }
+
+    /* ─── 10. PRICE ───────────────────────────────── */
+    .price {
+      background: var(--bg);
+      padding: 96px var(--pad);
+      text-align: center;
+    }
+    .price h2 {
+      font-size: clamp(1.8rem, 4vw, 2.8rem);
+      font-weight: 900;
+      max-width: 680px; margin: 0 auto 16px;
+    }
+    .price-sub {
+      color: var(--muted); font-size: 1rem; margin-bottom: 32px;
+    }
+    .price-amount {
+      font-family: 'Montserrat', sans-serif;
+      font-size: clamp(4rem, 10vw, 6.5rem);
+      font-weight: 900;
+      color: var(--orange);
+      line-height: 1;
+      margin-bottom: 32px;
+    }
+    .price-amount small {
+      font-size: 0.35em;
+      vertical-align: super;
+      color: #aaa;
+    }
+    .price > .btn-orange { margin-bottom: 36px; }
+    .payment-badges {
+      display: flex; flex-wrap: wrap; gap: 12px;
+      justify-content: center; margin-bottom: 20px;
+    }
+    .pay-badge {
+      background: var(--card2);
+      border: 1px solid var(--border);
+      padding: 8px 18px;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      color: var(--muted);
+    }
+    .price-secure { font-size: 0.82rem; color: var(--muted); }
+
+    /* ─── 11. AUTHOR ──────────────────────────────── */
+    .author {
+      background: var(--bg2);
+      padding: 80px var(--pad);
+    }
+    .author-inner {
+      display: grid;
+      grid-template-columns: 1fr 380px;
+      gap: 64px;
+      align-items: center;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+    .author h2 {
+      font-size: clamp(1.6rem, 3vw, 2.2rem);
+      font-weight: 900;
+      margin-bottom: 28px;
+    }
+    .author h2 span { color: var(--orange); }
+    .author-text p {
+      font-size: 0.97rem;
+      color: #bbb;
+      line-height: 1.75;
+      margin-bottom: 16px;
+    }
+    .author-photo {
+      width: 100%;
+      height: 460px;
+    }
+
+    /* ─── 12. FINAL CTA ──────────────────────────── */
+    .finalcta {
+      background: var(--bg);
+      padding: 100px var(--pad);
+      text-align: center;
+    }
+    .finalcta h2 {
+      font-size: clamp(1.8rem, 4vw, 3rem);
+      font-weight: 900;
+      max-width: 700px;
+      margin: 0 auto 20px;
+      line-height: 1.2;
+    }
+    .finalcta p {
+      color: #bbb; max-width: 540px;
+      margin: 0 auto 12px; font-size: 1rem;
+    }
+    .finalcta .action-line {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 800; color: #fff; font-size: 1.05rem;
+      margin-bottom: 36px;
+    }
+    .finalcta > .btn-orange { margin-bottom: 20px; }
+    .finalcta-note { font-size: 0.82rem; color: var(--muted); }
+
+    /* ─── 13. FAQ ─────────────────────────────────── */
+    .faq {
+      background: var(--bg2);
+      padding: 80px var(--pad);
+    }
+    .faq h2 {
+      text-align: center;
+      font-size: clamp(1.6rem, 3vw, 2.2rem);
+      font-weight: 900;
+      margin-bottom: 48px;
+    }
+    .faq-inner { max-width: 760px; margin: 0 auto; }
+    .faq-item {
+      background: var(--card);
+      border: 1px solid var(--border);
+      margin-bottom: 12px;
+    }
+    .faq-btn {
+      width: 100%; background: none; border: none; color: var(--text);
+      font-family: 'Montserrat', sans-serif; font-weight: 700;
+      font-size: 1rem; padding: 22px 24px;
+      display: flex; align-items: center; justify-content: space-between;
+      cursor: pointer; text-align: left;
+      transition: color 0.2s;
+    }
+    .faq-btn:hover { color: var(--orange); }
+    .faq-icon {
+      width: 28px; height: 28px;
+      background: var(--orange); border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-weight: 900; font-size: 1.1rem; color: #fff;
+      flex-shrink: 0; transition: transform 0.3s;
+      margin-left: 16px;
+    }
+    .faq-icon.open { transform: rotate(45deg); }
+    .faq-answer {
+      max-height: 0; overflow: hidden;
+      transition: max-height 0.38s ease, padding 0.3s;
+      font-size: 0.95rem; color: var(--muted); padding: 0 24px;
+      line-height: 1.7;
+    }
+    .faq-answer.open { max-height: 300px; padding: 0 24px 22px; }
+
+    /* ─── 14. FOOTER ──────────────────────────────── */
+    footer {
+      background: #050505;
+      border-top: 1px solid var(--border);
+      padding: 40px var(--pad);
+    }
+    .footer-inner {
+      display: grid;
+      grid-template-columns: 1fr auto 1fr;
+      align-items: center;
+      gap: 24px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    .footer-logo {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 900; font-size: 1.3rem; color: var(--orange);
+    }
+    .footer-logo span { color: #fff; }
+    .footer-copy { font-size: 0.8rem; color: var(--muted); text-align: center; }
+    .footer-links {
+      display: flex; gap: 20px; justify-content: flex-end;
+      font-size: 0.8rem; color: var(--muted);
+    }
+    .footer-links a:hover { color: var(--orange); }
+
+    /* ─── STICKY NAV CTA ──────────────────────────── */
+    .sticky-nav {
+      position: sticky; top: 0; z-index: 999;
+      background: rgba(10,10,10,0.95);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+      padding: 12px var(--pad);
+      display: flex; align-items: center; justify-content: space-between;
+    }
+    .sticky-logo {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 900; font-size: 1.1rem; color: var(--orange);
+    }
+    .sticky-btn {
+      font-size: 0.8rem; padding: 10px 24px; letter-spacing: 0.1em;
+    }
+
+    /* ─── RESPONSIVE ──────────────────────────────── */
+    @media (max-width: 768px) {
+      :root { --pad: 5%; }
+      .hero { grid-template-columns: 1fr; }
+      .hero-img-wrap { display: none; }
+      .comparison-grid { grid-template-columns: 1fr; }
+      .ba-grid { grid-template-columns: 1fr; }
+      .bonus-grid { grid-template-columns: 1fr; }
+      .author-inner { grid-template-columns: 1fr; }
+      .author-photo { height: 300px; }
+      .footer-inner { grid-template-columns: 1fr; text-align: center; }
+      .footer-links { justify-content: center; }
+      .how-card { width: 100%; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- 1. TOP BAR -->
+  <div class="topbar">
+    <p>Automação com IA aplicável a qualquer negócio — sem precisar saber programar</p>
+  </div>
+
+  <!-- STICKY NAV -->
+  <nav class="sticky-nav">
+    <div class="sticky-logo">Núcleo<span>1</span></div>
+    <a href="#inscricao" class="btn-orange sticky-btn">Garantir Acesso — R$97</a>
+  </nav>
+
+  <!-- 2. HERO -->
+  <section class="hero">
+    <div class="hero-left">
+      <div class="hero-logo">
+        <div class="hero-logo-name">Núcleo<span>1</span></div>
+        <div class="hero-logo-tag">Sistemas de IA para empresários</div>
+      </div>
+      <h1>A IA vai atrás dos seus leads,<br/>faz <span class="orange">follow-up infinito</span><br/>e só te entrega quem fecha.</h1>
+      <p class="hero-sub">21 sistemas prontos que uso todo dia na minha empresa. Sua equipe copia, cola e aplica hoje — sem saber programar. Acesso imediato por apenas R$97.</p>
+      <a href="#inscricao" class="btn-orange">Quero os 21 Sistemas Agora →</a>
+    </div>
+    <div class="hero-img-wrap">
+      <div class="img-placeholder hero-photo">Foto do Marcos Martins</div>
+      <div class="hero-badge hero-badge-top">
+        <div class="hero-badge-num">+21</div>
+        <div class="hero-badge-label">sistemas prontos</div>
+      </div>
+      <div class="hero-badge hero-badge-bottom">
+        <div class="hero-badge-num">R$97</div>
+        <div class="hero-badge-label">pagamento único</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3. COMPARISON -->
+  <section class="comparison">
+    <div class="container" style="padding:0;">
+      <h2>A diferença entre ter IA e <span class="orange">usar IA de verdade</span></h2>
+      <div class="comparison-grid">
+        <div class="comp-card without">
+          <div class="comp-header">❌ Sem os sistemas</div>
+          <div class="comp-result">Operação manual</div>
+          <p class="comp-desc">Equipe sobrecarregada fazendo follow-up à mão, leads esfriando, horas perdidas em tarefas repetitivas.</p>
+        </div>
+        <div class="comp-card with">
+          <div class="comp-header">✅ Com os 21 sistemas</div>
+          <div class="comp-result">IA trabalhando 24/7</div>
+          <p class="comp-desc">Automação rodando enquanto você dorme: follow-up, qualificação, suporte e fechamento de vendas no piloto automático.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4. PAIN POINTS -->
+  <section class="pain">
+    <div class="pain-inner">
+      <h2>Se você se identifica com algum<br/>desses problemas, isso é para você:</h2>
+      <ul class="pain-list">
+        <li>
+          <div class="pain-icon">✕</div>
+          <span>Sua equipe gasta horas fazendo follow-up manual enquanto leads quentes esfriam sem resposta.</span>
+        </li>
+        <li>
+          <div class="pain-icon">✕</div>
+          <span>Você tentou usar IA mas desistiu porque parecia complicado demais ou exigia saber programar.</span>
+        </li>
+        <li>
+          <div class="pain-icon">✕</div>
+          <span>Assiste tutoriais e cursos de IA mas nunca consegue implementar nada na prática no seu negócio.</span>
+        </li>
+        <li>
+          <div class="pain-icon">✕</div>
+          <span>Paga ferramentas caras de automação que nunca chegam nem perto do potencial prometido.</span>
+        </li>
+        <li>
+          <div class="pain-icon">✕</div>
+          <span>Sabe que concorrentes já estão usando IA e se sente ficando para trás enquanto tenta entender por onde começar.</span>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- 5. REFRAME -->
+  <section class="reframe">
+    <div class="reframe-emoji">💡</div>
+    <h2>Você não precisa ser programador para ter IA trabalhando por você</h2>
+    <p>A maioria das pessoas acha que precisa aprender código, contratar um especialista ou gastar fortunas. A verdade é que com os sistemas certos, qualquer um consegue aplicar. <strong class="orange">Copia, cola e roda hoje.</strong></p>
+  </section>
+
+  <!-- 6. HOW IT WORKS -->
+  <section class="how">
+    <h2>Como você vai <span class="orange">aplicar na prática</span></h2>
+    <div class="how-row">
+      <div class="how-card">
+        <div class="img-placeholder how-img">Passo 1</div>
+        <div class="how-badge">1</div>
+        <div class="how-card-body"><p>Acesse a área de membros imediatamente após o pagamento</p></div>
+      </div>
+      <div class="how-card">
+        <div class="img-placeholder how-img">Passo 2</div>
+        <div class="how-badge">2</div>
+        <div class="how-card-body"><p>Escolha qualquer um dos 21 sistemas de IA prontos</p></div>
+      </div>
+      <div class="how-card">
+        <div class="img-placeholder how-img">Passo 3</div>
+        <div class="how-badge">3</div>
+        <div class="how-card-body"><p>Siga as instruções passo a passo — sem precisar programar nada</p></div>
+      </div>
+    </div>
+    <div class="how-row">
+      <div class="how-card">
+        <div class="img-placeholder how-img">Passo 4</div>
+        <div class="how-badge">4</div>
+        <div class="how-card-body"><p>Cole o sistema no seu negócio e ative a automação</p></div>
+      </div>
+      <div class="how-card">
+        <div class="img-placeholder how-img">Passo 5</div>
+        <div class="how-badge">5</div>
+        <div class="how-card-body"><p>Receba atualizações mensais com novos sistemas conforme surgem</p></div>
+      </div>
+    </div>
+    <a href="#inscricao" class="btn-orange">Quero Começar Agora →</a>
+  </section>
+
+  <!-- 7. BEFORE / AFTER -->
+  <section class="beforeafter">
+    <h2>Resultados <span class="orange">reais</span> de quem aplicou</h2>
+    <div class="ba-grid">
+      <div class="ba-pair">
+        <div class="ba-item">
+          <div class="img-placeholder ba-img">Resultado Antes</div>
+          <div class="ba-label antes">Antes</div>
+        </div>
+        <div class="ba-arrow">↓</div>
+        <div class="ba-item">
+          <div class="img-placeholder ba-img">Resultado Depois</div>
+          <div class="ba-label depois">Depois</div>
+        </div>
+      </div>
+      <div class="ba-pair">
+        <div class="ba-item">
+          <div class="img-placeholder ba-img">Resultado Antes</div>
+          <div class="ba-label antes">Antes</div>
+        </div>
+        <div class="ba-arrow">↓</div>
+        <div class="ba-item">
+          <div class="img-placeholder ba-img">Resultado Depois</div>
+          <div class="ba-label depois">Depois</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 8. DIFFERENTIATION -->
+  <section class="diff">
+    <div class="diff-card">
+      <div class="diff-tag">O que isso não é</div>
+      <h2>Não é curso, não é consultoria, não é teoria</h2>
+      <p>Esses 21 sistemas não são conceitos para você estudar ou aulas para você assistir por semanas. São as ferramentas exatas, documentadas linha por linha, que o Marcos usa nas próprias empresas todos os dias. Você pega, replica e vê funcionando na primeira hora.</p>
+    </div>
+  </section>
+
+  <!-- 9. BONUSES -->
+  <section class="bonus">
+    <h2>Você ainda leva esses <span class="orange">bônus de graça</span></h2>
+    <div class="bonus-grid">
+      <div class="bonus-card">
+        <div class="img-placeholder bonus-img">Bônus 1</div>
+        <div class="bonus-body">
+          <h4>🎁 5 Aulões de IA Aplicada</h4>
+          <p>Aulas exclusivas com os casos práticos mais valiosos de IA nos negócios. Do zero ao avançado, sem enrolação. <strong style="color:var(--orange)">Valor: R$297 — GRÁTIS</strong></p>
+        </div>
+      </div>
+      <div class="bonus-card">
+        <div class="img-placeholder bonus-img">Bônus 2</div>
+        <div class="bonus-body">
+          <h4>🎁 Templates no Lovable</h4>
+          <p>Designs e estruturas prontas para duplicar, personalizar e publicar em minutos, sem precisar de designer. <strong style="color:var(--orange)">Valor: R$197 — GRÁTIS</strong></p>
+        </div>
+      </div>
+      <div class="bonus-card">
+        <div class="img-placeholder bonus-img">Bônus 3</div>
+        <div class="bonus-body">
+          <h4>🎁 Atualizações Mensais</h4>
+          <p>Todo mês novos sistemas e melhorias são adicionados à sua biblioteca sem custo adicional. Você nunca fica desatualizado. <strong style="color:var(--orange)">INCLUSO sem custo extra</strong></p>
+        </div>
+      </div>
+    </div>
+    <a href="#inscricao" class="btn-orange">Quero Tudo Isso por R$97 →</a>
+  </section>
+
+  <!-- 10. PRICE -->
+  <section class="price" id="inscricao">
+    <h2>Pare de perder tempo com operação manual.<br/><span class="orange">Coloque IA para trabalhar por você hoje.</span></h2>
+    <p class="price-sub">Você vai ter acesso a tudo isso por apenas:</p>
+    <div class="price-amount"><small>R$</small>97<small>,00</small></div>
+    <a href="https://pay.kiwify.com.br/xqhlmRc" class="btn-orange" style="margin-bottom:36px; font-size:1.1rem; padding:20px 48px;">⚡ Quero Acesso Imediato</a>
+    <div class="payment-badges">
+      <div class="pay-badge">PIX</div>
+      <div class="pay-badge">Visa</div>
+      <div class="pay-badge">Mastercard</div>
+      <div class="pay-badge">PayPal</div>
+      <div class="pay-badge">Boleto</div>
+      <div class="pay-badge">Elo</div>
+    </div>
+    <p class="price-secure">🔒 Compra 100% segura · Garantia incondicional de 7 dias</p>
+  </section>
+
+  <!-- 11. AUTHOR -->
+  <section class="author">
+    <div class="author-inner">
+      <div class="author-text">
+        <h2>Quem é <span>Marcos Martins?</span></h2>
+        <p>Marcos é fundador da <strong>Núcleo1</strong> e da <strong>StayApp</strong>, com mais de 14 anos construindo e escalando empresas de tecnologia. Já liderou equipes de mais de 50 pessoas e processou dezenas de milhares de transações ao longo da carreira.</p>
+        <p>Tudo neste produto são os sistemas exatos que ele usa no dia a dia para manter suas empresas competitivas e operando no piloto automático. Nada de teoria — cada ferramenta foi testada na prática antes de ser documentada aqui.</p>
+        <p>Sua missão com o Núcleo1 é simples: tornar o poder da IA acessível para empresários de qualquer segmento, sem precisar saber programar ou contratar uma equipe de tecnologia cara.</p>
+      </div>
+      <div class="img-placeholder author-photo">Foto do Marcos Martins</div>
+    </div>
+  </section>
+
+  <!-- 12. FINAL CTA -->
+  <section class="finalcta">
+    <h2>Você já sabe o que quer.<br/><span class="orange">Você só precisava de um empurrão.</span></h2>
+    <p>Seus concorrentes já estão automatizando. Cada dia sem IA é um dia de vantagem que eles acumulam sobre você.</p>
+    <p class="action-line">Tome a decisão. Acesse os 21 sistemas. Aplique hoje.</p>
+    <a href="#inscricao" class="btn-orange" style="font-size:1.1rem; padding:20px 48px;">Garantir Acesso por R$97 →</a>
+    <p class="finalcta-note">Em menos de 5 minutos você pode ter seu primeiro sistema de IA rodando.</p>
+  </section>
+
+  <!-- 13. FAQ -->
+  <section class="faq">
+    <h2>Perguntas <span class="orange">frequentes</span></h2>
+    <div class="faq-inner">
+
+      <div class="faq-item">
+        <button class="faq-btn" data-faq="0">
+          Preciso saber programar para usar os sistemas?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">Não. Os sistemas foram feitos exatamente para quem não sabe programar. Você copia o sistema, segue as instruções passo a passo e cola na ferramenta indicada. Se você sabe usar o WhatsApp, você consegue aplicar.</div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-btn" data-faq="1">
+          Funciona para qualquer tipo de negócio?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">Sim. Os 21 sistemas foram desenhados para serem adaptáveis a qualquer segmento: e-commerce, clínicas, agências, prestadores de serviço, escritórios, restaurantes e muito mais. Se você tem clientes, tem como aplicar.</div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-btn" data-faq="2">
+          Quando vou receber acesso após o pagamento?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">O acesso é imediato. Logo após a confirmação do pagamento (inclusive via PIX) você recebe o acesso por email e já pode explorar todos os 21 sistemas e os bônus.</div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-btn" data-faq="3">
+          E se eu não gostar? Tem garantia?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">Sim. Você tem 7 dias de Garantia Incondicional. Se por qualquer razão — nem precisa ter motivo — você não ficar satisfeito, basta enviar um email e devolvemos 100% do valor pago, sem perguntas e sem burocracia.</div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- 14. FOOTER -->
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-logo">Núcleo<span>1</span></div>
+      <p class="footer-copy">© 2025 Núcleo1 · Marcos Martins · Todos os direitos reservados<br/>Produto distribuído pela plataforma Kiwify</p>
+      <div class="footer-links">
+        <a href="#">Política de Privacidade</a>
+        <a href="#">Termos de Uso</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // FAQ Accordion
+    document.querySelectorAll('.faq-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const item = btn.closest('.faq-item');
+        const answer = item.querySelector('.faq-answer');
+        const icon = btn.querySelector('.faq-icon');
+        const isOpen = answer.classList.contains('open');
+
+        // close all
+        document.querySelectorAll('.faq-answer').forEach(a => a.classList.remove('open'));
+        document.querySelectorAll('.faq-icon').forEach(i => i.classList.remove('open'));
+
+        if (!isOpen) {
+          answer.classList.add('open');
+          icon.classList.add('open');
+        }
+      });
+    });
+  </script>
+</body>
+</html>
